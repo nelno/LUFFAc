@@ -1,0 +1,50 @@
+project {
+	/* clang */
+/*
+	cpp_compiler_name = "clang++"
+	cpp_linker_name	= "ld"
+	c_compiler_name = "clang"
+	c_linker_name = "g++"
+
+	compiler_arg_options = "-target x86_64-pc-windows-gnu -D_X86_ -std=c++17 -pthread -Wall -v -fdiagnostics-absolute-paths"
+	c_compiler_arg_options = "-target x86_64-pc-windows-gnu -pthread -Wall"
+	linker_arg_options = "-v -static-libstdc++ -static-libgcc"
+*/
+	/* gcc */
+
+	cpp_compiler_name = "g++"
+	cpp_linker_name	= "g++"
+	c_compiler_name = "gcc"
+	c_linker_name = "gcc"
+	
+	compiler_arg_options = "-std=c++17 -pthread -Wall"
+	c_compiler_arg_options = "-pthread -Wall"
+	linker_arg_options = "-static-libstdc++ -static-libgcc"
+
+	archiver_name = "ar"
+
+	rel_obj_path = "build"
+	rel_out_path = "build"
+	clean_ext = ".o;.exe;.dll;.a;.so"
+	output_file_name = "luffa.exe"
+
+	exclude_files = ""	
+}
+
+config {
+	name = "debug"
+	compiler_options = "-O0 -g -D__STDC_FORMAT_MACROS -D_WINDOWS -DDEBUG -D_DEBUG"
+	linker_options = ""
+	input_libs = ""
+	sys_libs = "winmm;gdi32"
+	include_paths = "src\\.;src\\fuzzywuzzy\\include\\."
+}
+
+config {
+	name = "release"
+	compiler_options = "-O3 -D__STDC_FORMAT_MACROS -D_WINDOWS -DNDEBUG"
+	linker_options = ""
+	input_libs = ""
+	sys_libs = "winmm;gdi32"
+	include_paths = "src\\.;src\\fuzzywuzzy\\include\\."
+}

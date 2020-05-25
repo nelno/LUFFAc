@@ -1,0 +1,66 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build.Current.File",
+        "type": "shell",
+        "command": "py3.bat",
+        "presentation": {
+          "focus": false,
+        },
+        "args": [          
+          "../snake/snake.py",
+          "build",
+          "${command:cpptools.activeConfigName}",
+          "-file",
+          "${file}"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },
+      {
+        "label": "BuildAndLink.Current.File",
+        "type": "shell",
+        "command": "py3.bat",
+        "args": [          
+          "../snake/snake.py",
+          "link",
+          "${command:cpptools.activeConfigName}",
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },      
+      {
+        "label": "Build Otter Engine",
+        "type": "shell",
+        "command": "py3.bat",
+        "args": [          
+          "../snake/snake.py",
+          "build",
+          "${command:cpptools.activeConfigName}",
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "Clean.Current.File",
+        "type": "shell",
+        "command": "py3.bat",
+        "args": [          
+          "../snake/snake.py",
+          "clean",
+          "${command:cpptools.activeConfigName}",
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },       
+    ]
+  }

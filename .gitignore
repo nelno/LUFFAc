@@ -1,0 +1,38 @@
+# Visual Studio Files #
+#######################
+*.user
+*.suo
+*.sdf
+*.ipch
+*.opensdf
+
+# compiler outputs #
+####################
+*.obj
+*.o
+*.a
+*.idb
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.lastbuildstate
+*.cache
+*.exe
+
+# binary assets #
+#################
+
+
+# ignore build folders #
+########################
+build/**/*
+
+# ignore some tools we don't want to version #
+##############################################
+tools/codeblocks-13.12/**/*
+static_libs/wxWidgets-2.8.12/**/*
+
+# ignore batch files
+####################
+*.bat
